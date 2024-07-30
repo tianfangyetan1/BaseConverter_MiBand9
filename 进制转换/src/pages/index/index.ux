@@ -29,6 +29,10 @@
       <text class="number">{{numbers.n_16}}</text>
     </div>
 
+    <div class="toZero" onclick="toZero">
+      <text>归零</text>
+    </div>
+
     <!-- “关于”按钮 -->
     <div class="about">
       <text>i</text>
@@ -38,6 +42,7 @@
 
 <script>
 import router from '@system.router'
+import prompt from '@system.prompt'
 
 export default {
   private: {
@@ -54,7 +59,10 @@ export default {
       n_8: 0,
       n_10: 0,
       n_16: 0
-    }
+    },
+
+    // 准备归零
+    perpareToZero: false
   },
 
   // 刷新时间
@@ -118,6 +126,29 @@ export default {
     })
   },
 
+
+  // 归零
+  toZero () {
+    if (this.perpareToZero) {
+      
+      this.$app.$def.data.number = 0
+      this.number = 0
+      this.refreshConvertNumber()
+
+    } else {
+
+      this.perpareToZero = true
+      prompt.showToast({
+        message: '再次点击确认',
+        duration: 2000
+      })
+
+      setTimeout(() => {
+        this.perpareToZero = false
+     }, 2000)
+
+    }
+  }
 }
 </script>
 
@@ -188,6 +219,19 @@ export default {
 .cardHeader {
   flex-direction: row;
   justify-content: space-between;
+}
+
+.toZero {
+  margin: 10px 0 10px 61px;
+  padding: 7px;
+  width: 70px;
+  /* height: 35px; */
+  font-size: 20px;
+  background-color: #FF8515;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 
 </style>
