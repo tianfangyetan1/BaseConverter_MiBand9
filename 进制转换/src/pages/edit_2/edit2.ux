@@ -42,7 +42,6 @@
     // 时间
     hours: 0,
     minute: 0,
-    number: 0,
     
     // 数值按钮（数码）
     btns: [0, 1],
