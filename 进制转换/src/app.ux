@@ -1,0 +1,13 @@
+<script>
+export default {
+  onCreate() {
+    console.log('app created')
+  },
+  onDestroy() {
+    console.log('app destroyed')
+  },
+  data: {
+    number: 1234
+  }
+}
+</script>

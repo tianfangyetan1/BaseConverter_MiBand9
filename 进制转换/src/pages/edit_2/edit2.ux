@@ -1,0 +1,178 @@
+<template>
+  <div class="page">
+
+    <div class="header">
+      <text class="time">{{hours}}:{{minute}}</text>
+      <text class="title">二进制编辑</text>
+    </div>
+
+    <scroll class="layout" scroll-y="{{true}}">
+      <text>{{number_splited}}</text>
+    </scroll>
+
+    <div class="footer">
+
+      <scroll class="buttons">
+        <div class="button" for="{{(index, value) in btns}}" onclick="btn(value)">
+          <text>{{value}}</text>
+        </div>
+      </scroll>
+      
+      <div class="backspace" onclick="backspace">
+        <div class="backspaceContain">
+          <image src="/common/backspace.jpg"></image>
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+</template>
+
+<script>
+ export default {
+
+  private: {
+    hours: 0,
+    minute: 0,
+    number: 0,
+    btns: [0, 1],
+    number: "0"
+  },
+
+  computed: {
+    number_splited() {
+      function split(text) {
+        let r = ''
+        let n = text.length
+        for (let i = 0; i < n; i++) {
+          r += text[i]
+          if ((i + 1) % 4 == 0 && n - i != 1) {
+            r += ' '
+          }
+        }
+        return r
+      }
+      return split(this.number)
+    }
+  },
+
+  onReady() {
+    this.number = this.$app.$def.data.number.toString(2)
+    this.refreshTime()
+    setInterval(() => {
+      this.refreshTime()
+    }, 1000)
+  },
+
+  refreshTime() {
+    let time = new Date()
+    this.hours = time.getHours()
+    let minute = time.getMinutes()
+    if (minute < 10) {
+      this.minute = '0' + minute
+    } else {
+      this.minute = minute
+    }
+    time = null
+  },
+
+  btn (value) {
+    if (this.number == '0') {
+      if (value == 0) {
+        return
+      }
+      this.number = String(value)
+    } else {
+      this.number += String(value)
+    }
+  },
+
+  backspace () {
+    let a = this.number.split("")
+    a.pop()
+    if (a.length == 0) {
+      a.push('0')
+    }
+    this.number = a.join("")
+    a = null
+  }
+ }
+</script>
+
+<style>
+
+.page {
+  width: 192px;
+  height: 490px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  width: 192px;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.time {
+  font-size: 20px;
+  color: #eeeeee;
+}
+
+.title {
+  font-size: 25px;
+  /* color: #ff9837; */
+}
+
+.layout {
+  width: 192px;
+  height: 270px;
+  background-color: #222222;
+  margin: 7px 0;
+  padding: 10px;
+  border-radius: 10px;
+  flex-direction: column;
+}
+
+.layout text {
+  font-size: 24px;
+}
+
+.footer {
+  flex-direction: column;
+}
+
+.button {
+  width: 54px;
+  height: 54px;
+  margin: 5px;
+  background-color: #222222;
+  align-items: center;
+  justify-content: center;
+}
+
+.backspace {
+  margin: 4px 0 0 60px;
+  width: 80px;
+  height: 70px;
+  padding: 10px;
+  border-radius: 50%; 
+  overflow: hidden;
+  background-color: #FF8210;
+  align-items: center;
+  justify-content: center;
+}
+
+.backspaceContain {
+  margin: 4px;
+}
+
+.backspace image, .backspaceContain {
+  width: 70px;
+  height: 45px;
+  object-fit: contain;
+}
+
+</style>
