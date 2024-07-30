@@ -31,6 +31,15 @@
       },
       "pages/edit_2": {
         "component": "edit2"
+      },
+      "pages/edit_8": {
+        "component": "edit8"
+      },
+      "pages/edit_10": {
+        "component": "edit10"
+      },
+      "pages/edit_16": {
+        "component": "edit16"
       }
     }
   }

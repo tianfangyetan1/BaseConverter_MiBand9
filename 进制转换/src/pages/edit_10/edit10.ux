@@ -1,0 +1,203 @@
+<template>
+  <div class="page">
+
+    <!-- 标题和时间 -->
+    <div class="header">
+      <text class="time">{{hours}}:{{minute}}</text>
+      <text class="title">二进制编辑</text>
+    </div>
+
+    <!-- 当前数值显示区域 -->
+    <scroll class="layout" scroll-y="{{true}}">
+      <text>{{number_splited}}</text>
+    </scroll>
+
+    <!-- 按钮区域 -->
+    <div class="footer">
+
+      <!-- 数值按钮 -->
+      <scroll class="buttons">
+        <div class="button" for="{{(index, value) in btns}}" onclick="btn(value)">
+          <text>{{value}}</text>
+        </div>
+      </scroll>
+      
+      <!-- 删除键 -->
+      <div class="backspace" onclick="backspace">
+        <div class="backspaceContain">
+          <image src="/common/backspace.jpg"></image>
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+</template>
+
+<script>
+ export default {
+
+  private: {
+    
+    // 时间
+    hours: 0,
+    minute: 0,
+    
+    // 数值按钮（数码）
+    btns: [0, 1],
+
+    // 当前编辑的数值（二进制）
+    number: "0"
+  },
+
+  computed: {
+
+    // 经过四位分隔的数值
+    number_splited() {
+      function split(text) {
+        let r = ''
+        let n = text.length
+        for (let i = 0; i < n; i++) {
+          r += text[i]
+          if ((i + 1) % 4 == 0 && n - i != 1) {
+            r += ' '
+          }
+        }
+        return r
+      }
+      return split(this.number)
+    }
+  },
+
+  // 设置时间刷新定时器
+  onReady() {
+    this.refreshTime()
+    setInterval(() => {
+      this.refreshTime()
+    }, 1000)
+  },
+
+  // 从app中读取数值
+  onShow() {
+    this.number = this.$app.$def.data.number.toString(2)
+  },
+
+  // 向app写入数值
+  onHide() {
+    this.$app.$def.data.number = parseInt(this.number, 2)
+  },
+
+  // 刷新时间
+  refreshTime() {
+    let time = new Date()
+    this.hours = time.getHours()
+    let minute = time.getMinutes()
+    if (minute < 10) {
+      this.minute = '0' + minute
+    } else {
+      this.minute = minute
+    }
+    time = null
+  },
+
+  // 数值按钮点击事件
+  btn (value) {
+    if (this.number == '0') {
+      if (value == 0) {
+        return
+      }
+      this.number = String(value)
+    } else {
+      this.number += String(value)
+    }
+  },
+
+  // 删除键被点击
+  backspace () {
+    let a = this.number.split("")
+    a.pop()
+    if (a.length == 0) {
+      a.push('0')
+    }
+    this.number = a.join("")
+    a = null
+  }
+ }
+</script>
+
+<style>
+
+.page {
+  width: 192px;
+  height: 490px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  width: 192px;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.time {
+  font-size: 20px;
+  color: #eeeeee;
+}
+
+.title {
+  font-size: 25px;
+  /* color: #ff9837; */
+}
+
+.layout {
+  width: 192px;
+  height: 270px;
+  background-color: #222222;
+  margin: 7px 0;
+  padding: 10px;
+  border-radius: 10px;
+  flex-direction: column;
+}
+
+.layout text {
+  font-size: 24px;
+}
+
+.footer {
+  flex-direction: column;
+}
+
+.button {
+  width: 54px;
+  height: 54px;
+  margin: 5px;
+  background-color: #222222;
+  align-items: center;
+  justify-content: center;
+}
+
+.backspace {
+  margin: 4px 0 0 60px;
+  width: 80px;
+  height: 70px;
+  padding: 10px;
+  border-radius: 50%; 
+  overflow: hidden;
+  background-color: #FF8210;
+  align-items: center;
+  justify-content: center;
+}
+
+.backspaceContain {
+  margin: 4px;
+}
+
+.backspace image, .backspaceContain {
+  width: 70px;
+  height: 45px;
+  object-fit: contain;
+}
+
+</style>
