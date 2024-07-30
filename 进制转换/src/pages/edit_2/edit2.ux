@@ -71,13 +71,23 @@
 
   // 设置时间刷新定时器
   onReady() {
-    this.number = this.$app.$def.data.number.toString(2)
     this.refreshTime()
     setInterval(() => {
       this.refreshTime()
     }, 1000)
   },
 
+  // 从app中读取数值
+  onShow() {
+    this.number = this.$app.$def.data.number.toString(2)
+  },
+
+  // 向app写入数值
+  onHide() {
+    this.$app.$def.data.number = parseInt(this.number, 2)
+  },
+
+  // 刷新时间
   refreshTime() {
     let time = new Date()
     this.hours = time.getHours()
