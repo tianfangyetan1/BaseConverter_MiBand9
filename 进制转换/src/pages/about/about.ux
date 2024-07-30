@@ -61,7 +61,7 @@ export default {
 <style>
 .page {
   flex-direction: column;
-  width: 192;
+  width: 192px;
   /* height: 490; */
   margin: 0;
   padding: 0;
