@@ -105,6 +105,9 @@ import vibrator from '@system.vibrator'
 
   // 数值按钮点击事件
   btn (value) {
+    vibrator.vibrate({
+      mode: 'short'
+    })
     if (this.number == '0') {
       if (value == 0) {
         return
@@ -115,9 +118,6 @@ import vibrator from '@system.vibrator'
         prompt.showToast({
           message: '超出最大数值限制',
           duration: 2000
-        })
-        vibrator.vibrate({
-          mode: 'short'
         })
         return
       }
@@ -134,6 +134,9 @@ import vibrator from '@system.vibrator'
     }
     this.number = a.join("")
     a = null
+    vibrator.vibrate({
+      mode: 'short'
+    })
   }
  }
 </script>
