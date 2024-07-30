@@ -4,7 +4,7 @@
     <!-- 标题和时间 -->
     <div class="header">
       <text class="time">{{hours}}:{{minute}}</text>
-      <text class="title">二进制编辑</text>
+      <text class="title">八进制编辑</text>
     </div>
 
     <!-- 当前数值显示区域 -->
@@ -16,11 +16,11 @@
     <div class="footer">
 
       <!-- 数值按钮 -->
-      <scroll class="buttons">
-        <div class="button" for="{{(index, value) in btns}}" onclick="btn(value)">
+      <div class="buttons">
+        <div class="button {{index >= 6 ? 'bigButton' : ''}} " for="{{(index, value) in btns}}" onclick="btn(value)">
           <text>{{value}}</text>
         </div>
-      </scroll>
+      </div>
       
       <!-- 删除键 -->
       <div class="backspace" onclick="backspace">
@@ -47,9 +47,9 @@ import vibrator from '@system.vibrator'
     minute: 0,
     
     // 数值按钮（数码）
-    btns: [0, 1],
+    btns: [0, 1, 2, 3, 4, 5, 6, 7],
 
-    // 当前编辑的数值（二进制）
+    // 当前编辑的数值（八进制）
     number: "0"
   },
 
@@ -82,12 +82,12 @@ import vibrator from '@system.vibrator'
 
   // 从app中读取数值
   onShow() {
-    this.number = this.$app.$def.data.number.toString(2)
+    this.number = this.$app.$def.data.number.toString(8)
   },
 
   // 向app写入数值
   onHide() {
-    this.$app.$def.data.number = parseInt(this.number, 2)
+    this.$app.$def.data.number = parseInt(this.number, 8)
   },
 
   // 刷新时间
@@ -166,9 +166,9 @@ import vibrator from '@system.vibrator'
 
 .layout {
   width: 192px;
-  height: 270px;
+  height: 148px;
   background-color: #222222;
-  margin: 7px 0;
+  margin: 7px 0 5px 0;
   padding: 10px;
   border-radius: 10px;
   flex-direction: column;
@@ -182,6 +182,11 @@ import vibrator from '@system.vibrator'
   flex-direction: column;
 }
 
+.buttons {
+  width: 192px;
+  flex-wrap: wrap;
+}
+
 .button {
   width: 54px;
   height: 54px;
@@ -189,6 +194,11 @@ import vibrator from '@system.vibrator'
   background-color: #222222;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
+}
+
+.bigButton {
+  width: 86px;
 }
 
 .backspace {
