@@ -1,23 +1,28 @@
 <template>
   <div class="page">
 
+    <!-- 标题和时间 -->
     <div class="header">
       <text class="time">{{hours}}:{{minute}}</text>
       <text class="title">二进制编辑</text>
     </div>
 
+    <!-- 当前数值显示区域 -->
     <scroll class="layout" scroll-y="{{true}}">
       <text>{{number_splited}}</text>
     </scroll>
 
+    <!-- 按钮区域 -->
     <div class="footer">
 
+      <!-- 数值按钮 -->
       <scroll class="buttons">
         <div class="button" for="{{(index, value) in btns}}" onclick="btn(value)">
           <text>{{value}}</text>
         </div>
       </scroll>
       
+      <!-- 删除键 -->
       <div class="backspace" onclick="backspace">
         <div class="backspaceContain">
           <image src="/common/backspace.jpg"></image>
@@ -33,14 +38,22 @@
  export default {
 
   private: {
+    
+    // 时间
     hours: 0,
     minute: 0,
     number: 0,
+    
+    // 数值按钮（数码）
     btns: [0, 1],
+
+    // 当前编辑的数值（二进制）
     number: "0"
   },
 
   computed: {
+
+    // 经过四位分隔的数值
     number_splited() {
       function split(text) {
         let r = ''
@@ -57,6 +70,7 @@
     }
   },
 
+  // 设置时间刷新定时器
   onReady() {
     this.number = this.$app.$def.data.number.toString(2)
     this.refreshTime()
@@ -77,6 +91,7 @@
     time = null
   },
 
+  // 数值按钮点击事件
   btn (value) {
     if (this.number == '0') {
       if (value == 0) {
@@ -88,6 +103,7 @@
     }
   },
 
+  // 删除键被点击
   backspace () {
     let a = this.number.split("")
     a.pop()

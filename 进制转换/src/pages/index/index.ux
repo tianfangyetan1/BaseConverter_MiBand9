@@ -1,10 +1,14 @@
 <template>
   <scroll class="page">
+
+    <!-- 标题和时间 -->
     <div class="header">
       <text class="time">{{hours}}:{{minute}}</text>
       <text class="title">进制转换</text>
     </div>
     
+    <!-- 展示四种进制 -->
+
     <div class="card" onclick="toEdit(2)">
       <text class="sectionTitle">二进制</text>
       <text class="number">{{numbers.n_2}}</text>
@@ -25,6 +29,7 @@
       <text class="number">{{numbers.n_16}}</text>
     </div>
 
+    <!-- “关于”按钮 -->
     <div class="about">
       <text>i</text>
     </div>
@@ -35,11 +40,15 @@
 import router from '@system.router'
 
 export default {
-  // 页面级组件的数据模型，影响传入数据的覆盖机制：private内定义的属性不允许被覆盖
   private: {
+    // 时间
     hours: 0,
     minute: 0,
+
+    // 当前数值（十进制）
     number: 0,
+
+    // 当前数值的各种进制
     numbers: {
       n_2: 0,
       n_8: 0,
@@ -55,6 +64,7 @@ export default {
     })
   },
 
+  // 刷新时间
   refreshTime() {
     let time = new Date()
     this.hours = time.getHours()
@@ -67,8 +77,10 @@ export default {
     time = null
   },
 
+  // 刷新用于展示的数值
   refreshConvertNumber() {
 
+    // 用于四位分隔的函数
     function split(text) {
       let r = ''
       let n = text.length
@@ -81,6 +93,7 @@ export default {
       return r
     }
 
+    // 进制转换
     this.numbers.n_2 = split(this.number.toString(2))
     this.numbers.n_8 = split(this.number.toString(8))
     this.numbers.n_10 = split(this.number.toString(10))
@@ -89,6 +102,7 @@ export default {
     split = null
   },
 
+  // 设置时间刷新定时器
   onReady() {
     this.refreshTime()
     this.refreshConvertNumber()
@@ -97,11 +111,13 @@ export default {
     }, 1000)
   },
 
+  // 读取时间
   onShow() {
     this.number = this.$app.$def.data.number
     this.refreshConvertNumber()
   },
 
+  // 进入编辑页面
   toEdit (base) {
     this.$app.$def.data.number = this.number
     router.push({
