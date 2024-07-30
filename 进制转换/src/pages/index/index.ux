@@ -1,41 +1,42 @@
 <template>
-  <scroll class="page">
+  <scroll scroll-y="{{true}}" class="scrool-page">
+    <div class="page">
+        <!-- 标题和时间 -->
+      <div class="header">
+        <text class="time">{{hours}}:{{minute}}</text>
+        <text class="title">进制转换</text>
+      </div>
+      
+      <!-- 展示四种进制 -->
 
-    <!-- 标题和时间 -->
-    <div class="header">
-      <text class="time">{{hours}}:{{minute}}</text>
-      <text class="title">进制转换</text>
-    </div>
-    
-    <!-- 展示四种进制 -->
+      <div class="card" onclick="toEdit(2)">
+        <text class="sectionTitle">二进制</text>
+        <text class="number">{{numbers.n_2}}</text>
+      </div>
+      
+      <div class="card" onclick="toEdit(8)">
+        <text class="sectionTitle">八进制</text>
+        <text class="number">{{numbers.n_8}}</text>
+      </div>
 
-    <div class="card" onclick="toEdit(2)">
-      <text class="sectionTitle">二进制</text>
-      <text class="number">{{numbers.n_2}}</text>
-    </div>
-    
-    <div class="card" onclick="toEdit(8)">
-      <text class="sectionTitle">八进制</text>
-      <text class="number">{{numbers.n_8}}</text>
-    </div>
+      <div class="card" onclick="toEdit(10)">
+        <text class="sectionTitle">十进制</text>
+        <text class="number">{{numbers.n_10}}</text>
+      </div>
 
-    <div class="card" onclick="toEdit(10)">
-      <text class="sectionTitle">十进制</text>
-      <text class="number">{{numbers.n_10}}</text>
-    </div>
+      <div class="card" onclick="toEdit(16)">
+        <text class="sectionTitle">十六进制</text>
+        <text class="number">{{numbers.n_16}}</text>
+      </div>
 
-    <div class="card" onclick="toEdit(16)">
-      <text class="sectionTitle">十六进制</text>
-      <text class="number">{{numbers.n_16}}</text>
-    </div>
+      <div class="toZero" onclick="toZero">
+        <text>归零</text>
+      </div>
 
-    <div class="toZero" onclick="toZero">
-      <text>归零</text>
-    </div>
-
-    <!-- “关于”按钮 -->
-    <div class="about" onclick="about">
-      <text>i</text>
+      <!-- “关于”按钮 -->
+      <div class="about" onclick="about">
+        <text>i</text>
+      </div>
     </div>
   </scroll>
 </template>
@@ -43,6 +44,7 @@
 <script>
 import router from '@system.router'
 import prompt from '@system.prompt'
+import vibrator from '@system.vibrator'
 
 export default {
   private: {
@@ -129,6 +131,10 @@ export default {
 
   // 归零
   toZero () {
+    vibrator.vibrate({
+      mode: 'short'
+    })
+
     if (this.perpareToZero) {
 
       this.$app.$def.data.number = 0
@@ -160,10 +166,15 @@ export default {
 
 <style>
 
+.scrool-page {
+  width: 192px;
+  height: 490px;
+}
+
 .page {
   flex-direction: column;
-  width: 192;
-  /* height: 490; */
+  width: 192px;
+  height: 800px;
   margin: 0;
   padding: 0;
   padding-bottom: 10px;
