@@ -8,17 +8,15 @@
   "deviceTypeList": [
     "watch"
   ],
-  "features": [
-    {
+  "features": [ {
       "name": "system.router"
-    },
-    {
+    }, {
       "name": "system.prompt"
-    },
-    { 
+    }, { 
       "name": "system.storage"
-    }
-  ],
+    }, { 
+      "name": "system.vibrator" 
+  }],
   "config": {
     "logLevel": "log",
     "designWidth": 480

@@ -35,6 +35,9 @@
 </template>
 
 <script>
+import prompt from '@system.prompt'
+import vibrator from '@system.vibrator'
+
  export default {
 
   private: {
@@ -108,6 +111,16 @@
       }
       this.number = String(value)
     } else {
+      if (parseInt(this.number + String(value), 8) >= 9007199254740991) {
+        prompt.showToast({
+          message: '超出最大数值限制',
+          duration: 2000
+        })
+        vibrator.vibrate({
+          mode: 'short'
+        })
+        return
+      }
       this.number += String(value)
     }
   },
