@@ -38,6 +38,9 @@
       },
       "pages/edit_16": {
         "component": "edit16"
+      },
+      "pages/about": {
+        "component": "about"
       }
     }
   }

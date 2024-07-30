@@ -34,7 +34,7 @@
     </div>
 
     <!-- “关于”按钮 -->
-    <div class="about">
+    <div class="about" onclick="about">
       <text>i</text>
     </div>
   </scroll>
@@ -130,7 +130,7 @@ export default {
   // 归零
   toZero () {
     if (this.perpareToZero) {
-      
+
       this.$app.$def.data.number = 0
       this.number = 0
       this.refreshConvertNumber()
@@ -148,6 +148,12 @@ export default {
      }, 2000)
 
     }
+  },
+
+  about () {
+    router.push({
+      uri: "/pages/about"
+    })
   }
 }
 </script>
