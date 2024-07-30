@@ -7,7 +7,7 @@ export default {
     console.log('app destroyed')
   },
   data: {
-    number: 1234
+    number: 0
   }
 }
 </script>
