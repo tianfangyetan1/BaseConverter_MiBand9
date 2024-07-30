@@ -169,9 +169,9 @@ import vibrator from '@system.vibrator'
 
 .layout {
   width: 192px;
-  height: 270px;
+  height: 265px;
   background-color: #222222;
-  margin: 7px 0 5px 0;
+  margin: 7px 0 0 0;
   padding: 10px;
   border-radius: 10px;
   flex-direction: column;
