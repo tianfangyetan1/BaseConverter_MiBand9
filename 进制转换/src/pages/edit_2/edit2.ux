@@ -16,11 +16,11 @@
     <div class="footer">
 
       <!-- 数值按钮 -->
-      <scroll class="buttons">
+      <div class="buttons">
         <div class="button" for="{{(index, value) in btns}}" onclick="btn(value)">
           <text>{{value}}</text>
         </div>
-      </scroll>
+      </div>
       
       <!-- 删除键 -->
       <div class="backspace" onclick="backspace">
@@ -155,7 +155,7 @@
   width: 192px;
   height: 270px;
   background-color: #222222;
-  margin: 7px 0;
+  margin: 7px 0 5px 0;
   padding: 10px;
   border-radius: 10px;
   flex-direction: column;
@@ -170,12 +170,13 @@
 }
 
 .button {
-  width: 54px;
+  width: 86px;
   height: 54px;
   margin: 5px;
   background-color: #222222;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
 }
 
 .backspace {
