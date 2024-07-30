@@ -62,10 +62,11 @@ export default {
 .page {
   flex-direction: column;
   width: 192px;
-  /* height: 490; */
+  height: 490;
   margin: 0;
   padding: 0;
   padding-bottom: 10px;
+  overflow: hidden;
 }
 
 .header {
@@ -86,7 +87,7 @@ export default {
 }
 
 .sectionTitle, .content {
-  width: 192px;
+  width: 182px;
   /* margin: 10px 5px; */
 }
 
