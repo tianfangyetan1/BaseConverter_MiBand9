@@ -24,7 +24,7 @@
       <text class="number">{{numbers.n_10}}</text>
     </div>
 
-    <div class="card" onclick="toEdit()">
+    <div class="card" onclick="toEdit(16)">
       <text class="sectionTitle">十六进制</text>
       <text class="number">{{numbers.n_16}}</text>
     </div>
