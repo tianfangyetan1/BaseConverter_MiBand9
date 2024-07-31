@@ -114,7 +114,7 @@ export default {
     }, 1000)
   },
 
-  // 读取时间
+  // 读取数值
   onShow() {
     this.number = this.$app.$def.data.number
     this.refreshConvertNumber()
