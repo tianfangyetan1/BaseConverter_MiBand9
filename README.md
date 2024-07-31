@@ -1,4 +1,4 @@
-# NumberSystem
+# NumberSystems
 
 [![release](https://img.shields.io/github/v/release/tianfangyetan1/NumberSystems)](https://github.com/tianfangyetan1/NumberSystems/releases)
 [![release date](https://img.shields.io/github/release-date/tianfangyetan1/NumberSystems)](https://github.com/tianfangyetan1/NumberSystems/releases)
