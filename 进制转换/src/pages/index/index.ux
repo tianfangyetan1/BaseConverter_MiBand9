@@ -108,7 +108,6 @@ export default {
   // 设置时间刷新定时器
   onReady() {
     this.refreshTime()
-    this.refreshConvertNumber()
     setInterval(() => {
       this.refreshTime()
     }, 1000)
@@ -231,11 +230,6 @@ export default {
 
 .about text {
   font-size: 25px;
-}
-
-.cardHeader {
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 .toZero {
