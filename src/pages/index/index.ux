@@ -1,7 +1,8 @@
 <template>
   <scroll scroll-y="{{true}}" class="scrool-page">
     <div class="page">
-        <!-- 标题和时间 -->
+      
+      <!-- 标题和时间 -->
       <div class="header">
         <text class="time">{{hours}}:{{minute}}</text>
         <text class="title">进制转换</text>
