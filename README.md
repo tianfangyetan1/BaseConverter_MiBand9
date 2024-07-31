@@ -1,25 +1,21 @@
-## 快速上手
+# NumberSystem
 
-### 1. 开发
+[![release](https://img.shields.io/github/v/release/tianfangyetan1/NumberSystems)](https://github.com/tianfangyetan1/NumberSystems/releases)
+[![release date](https://img.shields.io/github/release-date/tianfangyetan1/NumberSystems)](https://github.com/tianfangyetan1/NumberSystems/releases)
 
-```
-npm install
-npm run start
-```
+适用于小米手环9的进制转换程序
 
-### 2. 构建
+## 注意事项
 
-```
-npm run build
-npm run release
-```
+- 设置[页面基准宽度](https://iot.mi.com/vela/quickapp/zh/content/framework/manifest.html#config)
 
-### 3. 调试
+  - 运行或打包前请将`src\manifest.json`中的`config.designWidth`修改为需要的数值（单位：像素）。
 
-```
-npm run watch
-```
+  - 在模拟器中运行项目前请修改为`466`（小米手表s3的宽度）。
 
-## 了解更多
+  - 打包项目前请修改为`192`（小米手环9的宽度）。
 
-你可以通过我们的[官方文档](https://iot.mi.com/vela/quickapp)熟悉和了解快应用。
+## 当前问题
+
+- [ ] 无法安装openssl
+- [ ] 应用图标显示问题
