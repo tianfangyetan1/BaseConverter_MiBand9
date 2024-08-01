@@ -118,6 +118,7 @@ export default {
   onShow() {
     this.number = this.$app.$def.data.number
     this.refreshConvertNumber()
+    router.clear()
   },
 
   // 进入编辑页面
@@ -199,7 +200,6 @@ export default {
 
 .card {
   width: 192px;
-  /* height: 200px; */
   background-color: #222222;
   margin: 7px 0;
   padding: 10px;
@@ -216,11 +216,22 @@ export default {
   margin-top: 10px;
 }
 
+.toZero {
+  margin: 10px 0 5px 56px;
+  width: 80px;
+  height: 54px;
+  padding: 8px;
+  border-radius: 50%; 
+  background-color: #FF8210;
+  align-items: center;
+  justify-content: center;
+}
+
 .about {
-  margin-left: 78.5px;
+  margin-left: 73.5px;
   margin-top: 10px;
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   font-size: 20px;
   background-color: #525252;
   flex-direction: column;
@@ -231,19 +242,6 @@ export default {
 
 .about text {
   font-size: 25px;
-}
-
-.toZero {
-  margin: 10px 0 10px 61px;
-  padding: 7px;
-  width: 70px;
-  /* height: 35px; */
-  font-size: 20px;
-  background-color: #FF8515;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
 }
 
 </style>

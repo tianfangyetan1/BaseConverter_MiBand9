@@ -8,19 +8,27 @@
     </div>
     
     <div class="sectionTitle">
-      <text>使用方法</text>
+      <text class="sectionTitle-text">开发者</text>
     </div>
 
-    <div class="content">
-      <text>进入各进制编辑页面编辑数值，返回主页后自动刷新</text>
-    </div>
-
-    <div class="sectionTitle">
-      <text>开发者</text>
+    <div class="avatar">
+      <image src="/common/avatar.jpg"></image>
     </div>
 
     <div class="content">
       <text>天方夜谭</text>
+    </div>
+
+    <div class="sectionTitle">
+      <text class="sectionTitle-text">更新日志</text>
+    </div>
+
+    <div class="versionCode">
+      <text class="versionCode-text">v1.1</text>
+    </div>
+
+    <div class="content">
+      <text>优化界面</text>
     </div>
 
   </div>
@@ -62,7 +70,7 @@ export default {
 .page {
   flex-direction: column;
   width: 192px;
-  height: 490;
+  height: 490px;
   margin: 0;
   padding: 0;
   padding-bottom: 10px;
@@ -86,18 +94,18 @@ export default {
   color: white;
 }
 
-.sectionTitle, .content {
+.avatar {
+  margin: 5px;
+}
+
+.content, .versionCode {
   width: 182px;
-  /* margin: 10px 5px; */
+  margin: 5px;
 }
 
 .sectionTitle {
   margin: 20px 5px 5px 5px;
   color: #FF8515;
-}
-
-.content {
-  margin: 2px 5px;
 }
 
 .sectionTitle text {
@@ -106,6 +114,11 @@ export default {
 
 .content text {
   font-size: 22px;
+}
+
+.versionCode-text {
+  font-size: 18px;
+  color: #b0b0b0;
 }
 
 </style>

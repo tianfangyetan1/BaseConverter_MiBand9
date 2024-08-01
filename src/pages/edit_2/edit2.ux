@@ -24,9 +24,7 @@
       
       <!-- 删除键 -->
       <div class="backspace" onclick="backspace">
-        <div class="backspaceContain">
-          <image src="/common/backspace.jpg"></image>
-        </div>
+        <text>删除</text>
       </div>
 
     </div>
@@ -147,7 +145,7 @@ import vibrator from '@system.vibrator'
   width: 192px;
   height: 490px;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .header {
@@ -171,7 +169,7 @@ import vibrator from '@system.vibrator'
   width: 192px;
   height: 265px;
   background-color: #222222;
-  margin: 7px 0 0 0;
+  margin: 7px 0 5px 0;
   padding: 10px;
   border-radius: 10px;
   flex-direction: column;
@@ -196,25 +194,15 @@ import vibrator from '@system.vibrator'
 }
 
 .backspace {
-  margin: 4px 0 0 60px;
+  margin: 4px 0 0 56px;
   width: 80px;
-  height: 70px;
-  padding: 10px;
-  border-radius: 50%; 
-  overflow: hidden;
+  height: 54px;
+  padding: 8px;
+  border-radius: 10px; 
   background-color: #FF8210;
   align-items: center;
   justify-content: center;
 }
 
-.backspaceContain {
-  margin: 4px;
-}
-
-.backspace image, .backspaceContain {
-  width: 70px;
-  height: 45px;
-  object-fit: contain;
-}
 
 </style>
