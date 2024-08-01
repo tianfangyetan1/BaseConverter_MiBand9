@@ -12,7 +12,7 @@
     </div>
 
     <div class="avatar">
-      <image src="/common/avatar.jpg"></image>
+      <image static src="/common/avatar.jpg"></image>
     </div>
 
     <div class="content">

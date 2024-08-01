@@ -65,7 +65,10 @@ export default {
     },
 
     // 准备归零
-    perpareToZero: false
+    perpareToZero: false,
+
+    // 时间刷新计时器ID
+    intervalId: null
   },
 
   // 刷新时间
@@ -109,7 +112,7 @@ export default {
   // 设置时间刷新定时器
   onReady() {
     this.refreshTime()
-    setInterval(() => {
+    this.intervalId = setInterval(() => {
       this.refreshTime()
     }, 1000)
   },
@@ -118,7 +121,6 @@ export default {
   onShow() {
     this.number = this.$app.$def.data.number
     this.refreshConvertNumber()
-    router.clear()
   },
 
   // 进入编辑页面
@@ -161,6 +163,11 @@ export default {
     router.push({
       uri: "/pages/about"
     })
+  },
+
+  // 销毁定时器
+  onDestroy() {
+    clearInterval(this.intervalId)
   }
 }
 </script>

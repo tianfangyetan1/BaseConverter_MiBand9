@@ -51,7 +51,10 @@ import vibrator from '@system.vibrator'
     btns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
 
     // 当前编辑的数值（十进制）
-    number: "0"
+    number: "0",
+
+    // 时间刷新计时器ID
+    intervalId: null
   },
 
   computed: {
@@ -76,7 +79,7 @@ import vibrator from '@system.vibrator'
   // 设置时间刷新定时器
   onReady() {
     this.refreshTime()
-    setInterval(() => {
+    this.intervalId = setInterval(() => {
       this.refreshTime()
     }, 1000)
   },
@@ -138,6 +141,11 @@ import vibrator from '@system.vibrator'
     }
     this.number = a.join("")
     a = null
+  },
+
+  // 销毁定时器
+  onDestroy() {
+    clearInterval(this.intervalId)
   }
  }
 </script>

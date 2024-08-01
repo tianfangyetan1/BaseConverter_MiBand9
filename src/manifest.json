@@ -1,8 +1,8 @@
 {
   "package": "com.tianfangyetan.numberSystems",
   "name": "进制转换",
-  "versionName": "1.1.0",
-  "versionCode": 2,
+  "versionName": "1.1.1",
+  "versionCode": 3,
   "minPlatformVersion": 1000,
   "icon": "/common/logo.png",
   "deviceTypeList": [
