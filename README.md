@@ -6,6 +6,23 @@
 
 适用于小米手环9的进制转换程序
 
+## 模拟器使用
+
+1. 新建一个虚拟机，用任意项目（示例项目）运行一遍
+
+2. 进入虚拟机目录
+
+![打开模拟器目录](.readmeimg/Screenshot_2024-08-01_21-27-46.png)
+![找到模拟器配置文件](.readmeimg/Screenshot_2024-08-01_21-28-53.png)
+
+3. 修改分辨率
+
+![修改模拟器分辨率](.readmeimg/Screenshot_2024-08-01_21-29-24.png)
+
+4. 运行项目
+
+![模拟器运行界面](.readmeimg/Screenshot_2024-08-01_21-28-03.png)
+
 ## 注意事项
 
 - 设置[页面基准宽度](https://iot.mi.com/vela/quickapp/zh/content/framework/manifest.html#config)
