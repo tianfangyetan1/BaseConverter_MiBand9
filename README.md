@@ -1,7 +1,7 @@
 # NumberSystems
 
 [![release](https://img.shields.io/github/v/release/tianfangyetan1/NumberSystems)](https://github.com/tianfangyetan1/NumberSystems/releases)
-[![MIT license](https://img.shields.io/github/license/tianfangyetan1/NumberSystems)](https://github.com/tianfangyetan1/NumberSystems/blob/master/LICENSE)
+[![MIT license](https://img.shields.io/github/license/tianfangyetan1/NumberSystems)](https://github.com/tianfangyetan1/NumberSystems?tab=MIT-1-ov-file)
 [![Band BBS community](https://img.shields.io/badge/Band_BBS-community-718298)](https://www.bandbbs.cn/threads/12425/)
 
 适用于小米手环9的进制转换程序
