@@ -14,7 +14,7 @@
 
 ![打开模拟器目录](.readmeimg/Screenshot_2024-08-01_21-27-46.png)
 
-3. 找到配置文件
+3. 找到配置文件 `Vela_模拟器名称.avd\config.ini`
 
 ![找到模拟器配置文件](.readmeimg/Screenshot_2024-08-01_21-28-53.png)
 
