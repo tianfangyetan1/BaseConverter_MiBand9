@@ -1,4 +1,4 @@
-# NumberSystems
+# Number Systems Convert for Mi Band 9
 
 [![release](https://img.shields.io/github/v/release/tianfangyetan1/NumberSystems)](https://github.com/tianfangyetan1/NumberSystems/releases)
 [![MIT license](https://img.shields.io/github/license/tianfangyetan1/NumberSystems)](https://github.com/tianfangyetan1/NumberSystems/blob/master/LICENSE)
