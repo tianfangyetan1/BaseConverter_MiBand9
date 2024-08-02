@@ -134,13 +134,7 @@ import vibrator from '@system.vibrator'
     vibrator.vibrate({
       mode: 'short'
     })
-    let a = this.number.split("")
-    a.pop()
-    if (a.length == 0) {
-      a.push('0')
-    }
-    this.number = a.join("")
-    a = null
+    this.number = this.number.slice(0, this.number.length - 1)
   },
 
   // 销毁定时器
