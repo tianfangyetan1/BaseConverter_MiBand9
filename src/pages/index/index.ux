@@ -1,5 +1,5 @@
 <template>
-  <scroll scroll-y="{{true}}" class="scrool-page">
+  <scroll scroll-y="{{true}}" class="scrool-page" bounces="{{true}}">
     <div class="page">
       
       <!-- 标题和时间 -->
