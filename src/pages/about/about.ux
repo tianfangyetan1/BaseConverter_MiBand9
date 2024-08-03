@@ -68,7 +68,7 @@ export default {
   },
 
   // 销毁定时器
-  onDestroy() {
+  onHide() {
     clearInterval(this.intervalId)
   }
 }

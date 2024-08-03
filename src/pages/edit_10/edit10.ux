@@ -92,6 +92,7 @@ import vibrator from '@system.vibrator'
   // 向app写入数值
   onHide() {
     this.$app.$def.data.number = parseInt(this.number, 10)
+    clearInterval(this.intervalId)
   },
 
   // 刷新时间
@@ -136,11 +137,6 @@ import vibrator from '@system.vibrator'
     })
     this.number = this.number.slice(0, this.number.length - 1)
   },
-
-  // 销毁定时器
-  onDestroy() {
-    clearInterval(this.intervalId)
-  }
  }
 </script>
 
