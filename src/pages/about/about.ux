@@ -40,13 +40,16 @@ export default {
     // 时间
     hours: 0,
     minute: 0,
+
+    // 时间刷新计时器ID
+    intervalId: null
   },
 
   // 设置时间刷新定时器
   onReady() {
     this.refreshTime()
     this.refreshConvertNumber()
-    setInterval(() => {
+    this.intervalId = setInterval(() => {
       this.refreshTime()
     }, 1000)
   },
@@ -63,6 +66,11 @@ export default {
     }
     time = null
   },
+
+  // 销毁定时器
+  onDestroy() {
+    clearInterval(this.intervalId)
+  }
 }
 </script>
 

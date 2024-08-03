@@ -81,7 +81,9 @@ export default {
     } else {
       this.minute = minute
     }
-    time = null
+    if (time.getSeconds == 0) {
+      global.runGC()
+    }
   },
 
   // 刷新用于展示的数值
@@ -121,6 +123,7 @@ export default {
   onShow() {
     this.number = this.$app.$def.data.number
     this.refreshConvertNumber()
+    global.runGC()
   },
 
   // 进入编辑页面
