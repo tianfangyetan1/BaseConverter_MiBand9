@@ -73,17 +73,15 @@ import vibrator from '@system.vibrator'
     }
   },
 
-  // 设置时间刷新定时器
-  onReady() {
+  onShow() {
+    // 从app中读取数值
+    this.number = this.$app.$def.data.number.toString(2)
+
+    // 设置时间刷新定时器
     this.refreshTime()
     this.intervalId = setInterval(() => {
       this.refreshTime()
     }, 1000)
-  },
-
-  // 从app中读取数值
-  onShow() {
-    this.number = this.$app.$def.data.number.toString(2)
   },
 
   // 向app写入数值
