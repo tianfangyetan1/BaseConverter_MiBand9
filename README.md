@@ -32,7 +32,7 @@
 
 ### 安装步骤
 
-> 来源： [Stack Overflow](https://stackoverflow.com/questions/50625283/how-to-install-openssl-in-windows-10)
+> 来源： [ssl - How to install OpenSSL in windows 10? - Stack Overflow](https://stackoverflow.com/questions/50625283/how-to-install-openssl-in-windows-10)
 
 1. 安装 [git](https://git-scm.com)
 2. 找到 openssl 路径，例如 `C:\Program Files\Git\usr\bin`
