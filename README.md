@@ -16,8 +16,12 @@
     hw.lcd.width=192
     ```
 4. 运行项目
-    ![模拟器运行界面](docs/Screenshot_2024-08-01_21-28-03.png)
+    <details>
+      <summary>模拟器运行效果</summary>
 
+      ![模拟器运行界面](docs/Screenshot_2024-08-01_21-28-03.png)
+    </details>
+    
 ## 页面基准宽度
 
 - [官方文档说明](https://iot.mi.com/vela/quickapp/zh/content/framework/manifest.html#config)
