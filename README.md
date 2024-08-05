@@ -24,7 +24,7 @@
     
 ## 页面基准宽度
 
-- [官方文档说明](https://iot.mi.com/vela/quickapp/zh/content/framework/manifest.html#config)
+- [官方文档说明](https://iot.mi.com/vela/quickapp/zh/content/framework/style/page-style-and-layout.html#px)
 - 运行或打包前请将 `src\manifest.json` 中的 `config.designWidth` 修改为需要的数值（单位：像素）
 - 在模拟器中运行项目请修改为 `466` （小米手表s3的宽度）
 - 打包项目至真机运行请修改为 `192` （小米手环9的宽度）
