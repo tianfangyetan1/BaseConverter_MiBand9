@@ -19,7 +19,7 @@
     <details>
       <summary>模拟器运行效果</summary>
 
-      ![模拟器运行界面](docs/Screenshot_2024-08-01_21-28-03.png)
+      ![模拟器运行效果](docs/Screenshot_2024-08-01_21-28-03.png)
     </details>
     
 ## 页面基准宽度
