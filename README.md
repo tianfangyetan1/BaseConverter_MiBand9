@@ -1,4 +1,4 @@
-# Number Systems Converter for Mi Band 9
+# Base Number Converter for Mi Band 9
 
 [![release](https://img.shields.io/github/v/release/tianfangyetan1/NumberSystems_MiBand9)](https://github.com/tianfangyetan1/NumberSystems_MiBand9/releases)
 [![MIT license](https://img.shields.io/github/license/tianfangyetan1/NumberSystems_MiBand9)](https://github.com/tianfangyetan1/NumberSystems_MiBand9/blob/master/LICENSE)
