@@ -29,17 +29,17 @@
 - 在模拟器中运行项目请修改为 `466` （小米手表s3的宽度）
 - 打包项目至真机运行请修改为 `192` （小米手环9的宽度）
 
-## 关于 [openssl](https://openssl.org/)
+## 关于 [OpenSSL](https://openssl.org/)
 
-- openssl 官方不提供打包后的二进制文件
-- git 安装时附有 openssl
+- OpenSSL 官方不提供打包后的二进制文件
+- git 安装时附有 OpenSSL
 
 ### 安装步骤
 
 > 来源： [ssl - How to install OpenSSL in windows 10? - Stack Overflow](https://stackoverflow.com/questions/50625283/how-to-install-openssl-in-windows-10)
 
 1. 安装 [git](https://git-scm.com)
-2. 找到 openssl 路径，例如 `C:\Program Files\Git\usr\bin`
+2. 找到 `openssl.exe` 的路径，例如 `C:\Program Files\Git\usr\bin`
 3. 将该路径添加至 path 环境变量
     <details>
       <summary>查看详情</summary>
