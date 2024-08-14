@@ -16,10 +16,13 @@
     hw.lcd.width=192
     ```
 4. 运行项目
+
     <details>
+
       <summary>模拟器运行效果</summary>
 
       ![模拟器运行效果](docs/Screenshot_2024-08-01_21-28-03.png)
+
     </details>
     
 ## 页面基准宽度
@@ -41,7 +44,9 @@
 1. 安装 [git](https://git-scm.com)
 2. 找到 `openssl.exe` 的路径，例如 `C:\Program Files\Git\usr\bin`
 3. 将该路径添加至 path 环境变量
+
     <details>
+
       <summary>详细步骤（Windows 11）</summary>
 
       ![设置→系统→系统信息→高级系统设置](docs/Screenshot_2024-08-03_16-09-16.png)
@@ -56,4 +61,4 @@
 
 ## 注意事项
 
-- JavaScript中整数的最大安全值是 $2 ^{53} - 1$ ，小米的框架似乎不支持 `Bigint` ，所以有最大值限制
+- JavaScript 中整数的最大安全值是 $2 ^{53} - 1$ ，小米的框架似乎不支持 `Bigint` ，所以有最大值限制
