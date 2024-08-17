@@ -10,7 +10,7 @@
 
 1. 新建一个模拟器，用任意项目（示例项目）运行一遍
 2. 打开模拟器目录，找到配置文件 `Vela_模拟器名称.avd\config.ini`
-3. 修改分辨率：`config.ini` 第23-24行
+3. 修改分辨率
     ```ini
     hw.lcd.height=490
     hw.lcd.width=192
